@@ -1,5 +1,13 @@
-<x-layouts.app.sidebar :title="$title ?? null">
-    <flux:main>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+    <head>
+        @include('partials.head')
+        @livewireStyles
+    </head>
+    <body class="min-h-screen dark:bg-zinc-800">
+    @include('partials.navbar')
         {{ $slot }}
-    </flux:main>
-</x-layouts.app.sidebar>
+        @fluxScripts
+        @livewireScripts
+    </body>
+</html>
