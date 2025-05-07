@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('author');
-            $table->integer('isbn');
+            $table->string('isbn')->unique();
             $table->string('cover_img')->nullable();
             $table->text('description')->nullable();
-            $table->string('published_year');
-            $table->string('language');
+            $table->string('published_year')->nullable();
+            $table->string('language')->nullable();
             $table->float('rating')->nullable();
             $table->timestamps();
         });
